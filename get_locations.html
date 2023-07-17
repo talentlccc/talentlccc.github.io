@@ -1,0 +1,23 @@
+<html>
+<head>
+	
+</head>
+<body>
+	<script>\ngetLocationConstant();
+	function getLocationConstant(){
+	  if(navigator.geolocation){
+	     navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+	 } else {
+	    alert("No GPS support"); 
+		}
+	}
+	function onGeoSuccess(event){
+	 document.location.href = "result.htm?error=0&latitude="+event.coords.latitude+"&longitude="+event.coords.longitude;
+	  alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
+	}
+	function onGeoError(event){
+	 document.location.href = "result.htm?error=1";
+	}
+</script>
+</body>
+</html>
