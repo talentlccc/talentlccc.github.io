@@ -4,21 +4,57 @@
 </head>
 <body>
 	<script>
-	getLocationConstant();
-	function getLocationConstant(){
-	  if(navigator.geolocation){
-	     navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
-	 } else {
-	    alert("No GPS support"); 
-		}
-	}
-	function onGeoSuccess(event){
-	 document.location.href = "result.htm?error=0&latitude="+event.coords.latitude+"&longitude="+event.coords.longitude;
-	  alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
-	}
-	function onGeoError(event){
-	 document.location.href = "result.htm?error=1";
-	}
+	// getLocationConstant();
+	// function getLocationConstant(){
+	//   if(navigator.geolocation){
+	//      navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+	//  } else {
+	//     alert("No GPS support"); 
+	// 	}
+	// }
+	// function onGeoSuccess(event){
+	//  document.location.href = "result.htm?error=0&latitude="+event.coords.latitude+"&longitude="+event.coords.longitude;
+	//   alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
+	// }
+	// function onGeoError(event){
+	//  document.location.href = "result.htm?error=1";
+	// }
+	// 检查浏览器是否支持Geolocation API
+if (navigator.geolocation) {
+  // 获取位置信息
+  navigator.geolocation.getCurrentPosition(showPosition, showError);
+} else {
+  alert("该浏览器不支持Geolocation API");
+}
+
+// 成功获取位置信息时的回调函数
+function showPosition(position) {
+  var latitude = position.coords.latitude; // 获取纬度
+  var longitude = position.coords.longitude; // 获取经度
+
+  alert("纬度: " + latitude);
+  alert("经度: " + longitude);
+
+  // 在这里可以根据需要执行其他操作，比如发送位置信息到服务器等等
+}
+
+// 获取位置信息失败时的回调函数
+function showError(error) {
+  switch (error.code) {
+    case error.PERMISSION_DENIED:
+      alert("用户拒绝了位置请求");
+      break;
+    case error.POSITION_UNAVAILABLE:
+      alert("位置信息不可用");
+      break;
+    case error.TIMEOUT:
+      alert("获取位置信息超时");
+      break;
+    case error.UNKNOWN_ERROR:
+      alert("未知错误");
+      break;
+  }
+}
 </script>
 </body>
 </html>
