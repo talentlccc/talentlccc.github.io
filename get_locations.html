@@ -62,34 +62,4 @@ function showError(error) {
 
 
 
-<!DOCTYPE html>
-<html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>AllOBJ</title>
-
-
-    <script type="text/javascript">
-
-        
-        function isMethodSupported() {
-            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.isMethodSupported("PassportJsbMethodGetAppInfo");
-            alert(deviceInfo)
-        }
-        function DeviceInfo() {
-            // deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.invokeMethod("PassportJsbMethodGetConfig");
-            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.invokeMethod("getAppInfo");
-            alert(deviceInfo);
-        }
-        
-    </script>
-</head>
-
-<body>
-    <h1>AllOBJ</h1>
-    <button style="width:200px;height:200px;" onclick="DeviceInfo()">AllObj</button>
-    <button style="width:200px;height:200px;" onclick="isMethodSupported()">AllObj</button>
-</body>
-
-</html>
