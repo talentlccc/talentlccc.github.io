@@ -74,12 +74,12 @@ function showError(error) {
 
         
         function isMethodSupported() {
-            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.isMethodSupported("PassportJsbMethodGetConfig");
+            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.isMethodSupported("PassportJsbMethodGetAppInfo");
             alert(deviceInfo)
         }
         function DeviceInfo() {
             // deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.invokeMethod("PassportJsbMethodGetConfig");
-            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.invokeMethod("getDeviceInfo");
+            var deviceInfo = window.PASSPORT_JSB_METHOD_INVOKER.invokeMethod("PassportJsbMethodGetAppInfo");
             alert(deviceInfo);
         }
         
