@@ -4,21 +4,21 @@
 </head>
 <body>
 	<script>
-	// getLocationConstant();
-	// function getLocationConstant(){
-	//   if(navigator.geolocation){
-	//      navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
-	//  } else {
-	//     alert("No GPS support"); 
-	// 	}
-	// }
-	// function onGeoSuccess(event){
-	//  document.location.href = "result.htm?error=0&latitude="+event.coords.latitude+"&longitude="+event.coords.longitude;
-	//   alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
-	// }
-	// function onGeoError(event){
-	//  document.location.href = "result.htm?error=1";
-	// }
+	   getLocationConstant();
+	   function getLocationConstant(){
+	   if(navigator.geolocation){
+	      navigator.geolocation.getCurrentPosition(onGeoSuccess,onGeoError);
+	  } else {
+	     alert("No GPS support"); 
+	 	}
+	 }
+	 function onGeoSuccess(event){
+	   document.location.href = "result.htm?error=0&latitude="+event.coords.latitude+"&longitude="+event.coords.longitude;
+	   alert("Success,Location: "+event.coords.latitude+", "+event.coords.longitude);
+	 }
+	 function onGeoError(event){
+	  document.location.href = "result.htm?error=1";
+	 }
 	// 检查浏览器是否支持Geolocation API
 if (navigator.geolocation) {
   // 获取位置信息
